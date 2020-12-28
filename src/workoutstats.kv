@@ -1,0 +1,51 @@
+#:kivy 2.0.0
+<WorkoutStats>:
+    #:set NUM_TABS 4
+    size_hint: 1, 1
+    pos_hint: {'center_x': .5, 'center_y': .5}
+    do_default_tab: False
+    tab_width: self.width / NUM_TABS
+
+    TabbedPanelItem:
+        text: 'DATA ENTRY'
+        Label:
+            text: 'First tab content area'
+    TabbedPanelItem:
+        text: 'DATA'
+        BoxLayout:
+            Label:
+                text: 'Second tab content area'
+            Button:
+                text: 'Button that does nothing'
+    TabbedPanelItem:
+        text: 'WORKOUTS'
+        BoxLayout:
+            orientation: 'vertical'
+            GridLayout:
+                cols: 3
+                size_hint: 0.5, 0.1
+                Spinner:
+                    text: root.fetch_workout_list()[0]
+                    values: root.fetch_workout_list()
+                    on_text: root.read_workout_file(self, self.text)
+                RstDocument:
+                    text: 'Name'
+                Button:
+                    text: 'Go!'
+            ScrollView:
+                do_scroll_x: False
+                do_scroll_y: True
+
+                Label:
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+                    padding: 10, 10
+                    text:
+                        'really some amazing text\n' * 100
+    TabbedPanelItem:
+        text: 'PROGRESSION PICS'
+        RstDocument:
+            text:
+                '\\n'.join(("Hello world", "-----------",
+                "You are in the third tab."))
