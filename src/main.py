@@ -28,7 +28,7 @@ class WorkoutStats(TabbedPanel):
     def fetch_workout_list(self) :
         return [splitext(f)[0] for f in listdir(self.PATH + r'/workouts')]
 
-    #Reads the workout file and update the information in the workouts tab
+    #Reads the workout file and update the information in the workout editor
     def read_workout_file(self, text) :
         print(text)
 
