@@ -1,0 +1,12 @@
+Barbell_Rows :
+    sets : 5
+    reps : 8
+Pulldowns :
+    sets : 3
+    reps : 8
+Seated_Cable_Rows :
+    sets : 3
+    reps : 8
+Barbell_Curls :
+    sets : 4
+    reps : 8

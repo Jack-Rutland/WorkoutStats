@@ -30,7 +30,8 @@ class WorkoutStats(TabbedPanel):
 
     #Reads the workout file and update the information in the workout editor
     def read_workout_file(self, text) :
-        print(text)
+        with open(text + '.workout','r') as f: #in write mode
+            print('')
 
     
 
