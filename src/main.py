@@ -11,8 +11,9 @@ display information about your workouts.
 from os import listdir
 from os import getcwd
 from os.path import splitext
-import pickle
 import kivy
+import workout
+
 
 from kivy.app import App
 from kivy.lang import Builder
