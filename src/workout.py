@@ -15,7 +15,14 @@ class Workout :
         self.name = name
         self.lift_list = []
 
+    def __str__(self) :
+        return_string = self.name + " : \n"
+        for l in self.lift_list :
+            return_string += "\t{0}\n\t\tsets:{1}\n\t\treps:{2}\n".format(l.name, l.sets, l.reps)
+        return return_string
+
     def addLift(self, lift) :
-        self.lift_list += lift
-    
+        self.lift_list.append(lift)
+
     def removeLift(self, lift) :
+        self.lift_list.remove(lift)
